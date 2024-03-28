@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Chart</title>
+    <style>
+        #tvchart {
+            /* position: absolute; */
+            width: 90vw;
+            height: 50vh;
+        }
+    </style>
+</head>
+<body>
+    <h2>Binance BTCUSD Chart</h2>
+    <select onChange="tvchart.loadData();" id="pairs"></select>
+    <select onChange="tvchart.loadData();" id="timeFrame">
+        <option value="1m">1 min</option>
+        <option value="3m">3 min</option>
+        <option value="5m">5 min</option>
+        <option value="15m">15 min</option>
+        <option value="30m">30 min</option>
+        <option value="1h">1 hr</option>
+        <option value="2h">2 hr</option>
+        <option value="4h">4 hr</option>
+        <option value="6h">6 hr</option>
+        <option value="8h">8 hr</option>
+        <option value="12h">12 hr</option>
+        <option value="1d" selected>Daily</option>
+        <option value="3d">3 Day</option>
+        <option value="1w">Weekly</option>
+        <option value="1M">Monthly</option>
+    </select>
+    <div id="tvchart"></div>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</html>
